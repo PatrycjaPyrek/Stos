@@ -1,0 +1,13 @@
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\bin\Debug\netcoreapp3.1\ImplementacjaStosu.exe
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\bin\Debug\netcoreapp3.1\ImplementacjaStosu.deps.json
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\bin\Debug\netcoreapp3.1\ImplementacjaStosu.runtimeconfig.json
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\bin\Debug\netcoreapp3.1\ImplementacjaStosu.runtimeconfig.dev.json
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\bin\Debug\netcoreapp3.1\ImplementacjaStosu.dll
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\bin\Debug\netcoreapp3.1\ImplementacjaStosu.pdb
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.csprojAssemblyReference.cache
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.AssemblyInfoInputs.cache
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.AssemblyInfo.cs
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.csproj.CoreCompileInputs.cache
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.dll
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.pdb
+C:\Users\Patrycja\source\repos\ImplementacjaStosu\ImplementacjaStosu\obj\Debug\netcoreapp3.1\ImplementacjaStosu.genruntimeconfig.cache
