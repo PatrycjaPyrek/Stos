@@ -17,7 +17,7 @@ namespace Stos
     /// Stos można przeglądać bez możliwości zmiany elementów (read-only)
     /// </remarks>
     /// <typeparam name="T">dowolny typ wartościowy lub referencyjny</typeparam>
-    public interface IStos<T>
+    public interface IStos<T>: IEnumerable<T>
     {
         //w interfejsie nie deklaruje się konstruktora
 
@@ -44,6 +44,6 @@ namespace Stos
         //kopiuje i eksportuje stos do tablicy
         T[] ToArray();
 
-       // T this[int index] { get; } //read-only
+        T this[int index] { get; } //read-only
     }
 }

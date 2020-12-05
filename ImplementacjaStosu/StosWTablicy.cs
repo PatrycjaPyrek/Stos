@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,6 +22,27 @@ namespace Stos
 
         public bool IsEmpty => szczyt == -1;
 
+        public T this[int index]=>
+            (index > Count - 1)?
+            throw new IndexOutOfRangeException() :
+            tab[index];
+        /*{
+            get
+            {
+                /*     T temp;
+                     var tablica = new T[tab.Length];
+                     if (index >= 0 && index <= tab.Length - 1)
+                         temp = tab[index];
+                     else
+                         throw new ArgumentOutOfRangeException();
+                     return temp;
+             
+                
+                    
+
+            }
+        }*/
+
         public void Clear() => szczyt = -1;
 
         public T Pop()
@@ -37,35 +59,29 @@ namespace Stos
             if (szczyt == tab.Length - 1)
             {
                 Array.Resize(ref tab, tab.Length * 2);
-               
             }
 
             szczyt++;
             tab[szczyt] = value;
+            
         }
 
         public void TrimExcess()
         {
-            int ileZapelnionych = 0;
+            int zajete = tab.Length;
             int ileWolnych = 0;
             foreach (var item in tab)
             {
-                if (item != null)
-                {
-                    ileZapelnionych += 1;
-                }
-                else
+                if (item == null)
                 {
                     ileWolnych += 1;
+                    
                 }
             }
-            if (ileWolnych > (ileZapelnionych + ileWolnych) * 0.1)
+            if (ileWolnych > Math.Round((zajete * 0.1)))
             {
-                //Console.WriteLine(tab.Length);
-                Console.WriteLine(ileWolnych);
-                int utnij = ((int)((int)ileWolnych - ((ileZapelnionych + ileWolnych) * 0.1)));
-                Array.Resize(ref tab, tab.Length - utnij);
-                Console.WriteLine(tab.Length);
+                int utnij = ((int)(ileWolnych - ((zajete) * 0.1)));
+                Array.Resize(ref tab, (zajete - utnij));
             }
         }
 
@@ -79,6 +95,24 @@ namespace Stos
                 temp[i] = tab[i];
             return temp;
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return this[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return (IEnumerator)this;
+        }
+        public System.Collections.ObjectModel.ReadOnlyCollection<T> ToArrayReadOnly()
+        {
+            return Array.AsReadOnly(tab);
+        }
     }
 }
 
+  
