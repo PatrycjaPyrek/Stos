@@ -14,16 +14,10 @@ namespace Stos
         public int Count { get
             { return _count; } }
 
-        T IStos<T>.Peek => throw new NotImplementedException();
-
-        bool IStos<T>.IsEmpty => throw new NotImplementedException();
-
-        //public Node First { get; set; }
-
         public  class Node
         {
-            private Node _data;
-            public Node Data
+            private T _data;
+            public T Data
             {
                 get { return _data; }
                 set { _data = value; }
@@ -36,8 +30,7 @@ namespace Stos
             }
             public Node(T element)
             {
-                Data = _data;
-
+                _data = element;
             }
 
             // public Wezel(T e, object szczyt1)
@@ -46,16 +39,25 @@ namespace Stos
             //       this.szczyt1 = szczyt1;
             // }
         }
-       
+        bool IStos<T>.IsEmpty => (first == null);
 
-        public bool IsEmpty()
+        T IStos<T>.Peek => first.Data;
+        T IStos<T>.Pop()
         {
-            return first == null;
+            if (IsEmpty()) throw new StosEmptyException();
+            var data = first.Data;
+            first = first.Next;
+            _count--;
+            return data;
         }
 
-      
-       
-        public Node Peek()
+        //public Node First { get; set; }
+
+        public  bool IsEmpty()
+        {
+            return (first == null);
+        }
+        public T Peek()
         {
             if (IsEmpty())
             {
@@ -76,7 +78,7 @@ namespace Stos
             _count++;
            
         }
-        public Node Pop()
+        public T Pop()
         {
             if (IsEmpty()) throw new StosEmptyException();
             var data = first.Data;
@@ -113,22 +115,33 @@ namespace Stos
 
         public T[] ToArray()
         {
-            throw new NotImplementedException();
+            //List<T> lista = new Node<T>();
+            //foreach (var item in element)
+            //{
+
+            //}
+            //T[] temp = new T[Count];
+            //for (int i = 0; i < temp.Length; i++)
+            //    temp[i] = tab[i];
+            //return temp;
+            throw new Exception();
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            Node data = first;
+            while (data != null)
+            {
+                yield return data.Data;
+                data = data.Next;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
 
-        T IStos<T>.Pop()
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }
